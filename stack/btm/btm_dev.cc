@@ -180,6 +180,7 @@ bool BTM_SecDeleteDevice(const RawAddress& bd_addr) {
     /* Clear out any saved BLE keys */
     btm_sec_clear_ble_keys(p_dev_rec);
     wipe_secrets_and_remove(p_dev_rec);
+
     /* Tell controller to get rid of the link key, if it has one stored */
     BTM_DeleteStoredLinkKey(&bda, NULL);
   }
